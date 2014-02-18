@@ -8,8 +8,12 @@ class SimplePrev(QtGui.QWidget):
 		self.initUI()
 
 	def initUI(self):
-		self.orcafilepathdisp=QtGui.QLineEdit()
-		self.rootfilepathdisp=QtGui.QLineEdit()
+		self.orcafilepathdisp=QtGui.QLabel(self)
+		self.rootfilepathdisp=QtGui.QLabel(self)
+		self.channeldisp=QtGui.QLabel(self)
+		self.countdisp=QtGui.QLabel(self)
+		self.setchan=QtGui.QPushButton('choose channel')
+		self.setcount=QtGui.QPushButton('choose count')
 		self.rootifyButton=QtGui.QPushButton("rootify")
 		self.txtifyButton=QtGui.QPushButton("asciify") #include option to set averaging
 		self.numpyfButton=QtGui.QPushButton("numpyfyNOT")
@@ -25,15 +29,27 @@ class SimplePrev(QtGui.QWidget):
 		grid.addWidget(self.rootfilepathdisp, 2, 0, 2, 1)
 		grid.addWidget(self.OrcaFileBrowseButton, 1, 2)
 		grid.addWidget(self.RootFileBrowseButton, 2, 2)
+		grid.addWidget(self.channeldisp, 4, 0)
+		grid.addWidget(self.countdisp, 5, 0)
+		grid.addWidget(self.setchan, 4, 2)
+		grid.addWidget(self.setcount, 5, 2)
 		grid.addWidget(self.rootifyButton, 1, 3)
 		grid.addWidget(self.txtifyButton, 1, 4)
 		grid.addWidget(self.previewButton, 2, 3)
 		grid.addWidget(self.fitButton, 2, 4)
 		self.setLayout(grid)
 		self.show()
-	
-	def FileyCyrus(self):
-		self.filey,_=QtGui.QFileDialog.getOpenFileName(self, 'Select file', '/home/bernd/Dropbox/work')
+
+	def chan(self):
+		self.chaner, ok=QtGui.QInputDialog.getText(self, '', 'choose channel')
+		if ok:
+			return int(self.chaner)
+	def count(self):
+		self.counter, ok=QtGui.QInputDialog.getText(self, '', 'choose count')
+		if ok:
+			return int(self.counter)
+	def FileyCyrus(self, startpath):
+		self.filey,_=QtGui.QFileDialog.getOpenFileName(self, 'Select file', startpath)
 		return self.filey
 
 def main():
@@ -44,4 +60,4 @@ def main():
 if __name__=='__main__':
 	main()
 
-	
+			
