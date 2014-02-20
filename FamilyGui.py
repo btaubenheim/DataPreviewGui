@@ -45,9 +45,12 @@ class SimplePrev(QtGui.QWidget):
 		if ok:
 			return int(self.chaner)
 	def count(self):
-		self.counter, ok=QtGui.QInputDialog.getText(self, '', 'choose count')
+		self.counter, ok=QtGui.QInputDialog.getText(self, '', 'choose count. Type All to choose all counts')
 		if ok:
-			return int(self.counter)
+			if self.counter=='All' or 'all':
+				return self.counter
+			else:
+				return int(self.counter)
 	def FileyCyrus(self, startpath):
 		self.filey,_=QtGui.QFileDialog.getOpenFileName(self, 'Select file', startpath)
 		return self.filey

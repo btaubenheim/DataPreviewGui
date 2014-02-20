@@ -56,11 +56,16 @@ class BigStepper():
 		self.model.sisdatatrans.draw_all_counts()
 
 	def updatechan(self):
-		self.model.sisdatatrans.channelnum=self.ui.chan()
+		channel=self.ui.chan()
+		self.model.sisdatatrans.channelnum=channel
 		self.ui.channeldisp.setText("channel: "+str(self.model.sisdatatrans.channelnum))
 	def updatecount(self):
-		self.model.sisdatatrans.numtriggers=self.ui.count()
-		self.ui.countdisp.setText("count: "+str(self.model.sisdatatrans.channelnum))
+		count=self.ui.count()
+		if count == "All" or "all":
+			self.model.sisdatatrans.numtriggers=None
+		else:
+			self.model.sisdatatrans.numtriggers=count
+		self.ui.countdisp.setText("count: "+str(self.model.sisdatatrans.numtriggers))
 def main():
 	app=QtGui.QApplication(sys.argv)
 	big=BigStepper()

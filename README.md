@@ -10,6 +10,6 @@ e.g:
     --*/SisDatamanipulation/...    	
     --*/DecayFit/...    			
 
-set the paths to your Data Folders and orcaroot in pathfinda. If you want to run the Scripts in SisDatamaipulation without the gui, you need to set the paths in the pathfinder in this folder. (This should be cleaned up and made more straight forward at some point).
+Set the paths to your Data Folders and orcaroot in 'pathfinda.py'.  If you want to run the Scripts in SisDatamaipulation without the gui, you need to set the paths in the pathfinder in this folder. (This should be cleaned up and made more straight forward at some point).
 
 
