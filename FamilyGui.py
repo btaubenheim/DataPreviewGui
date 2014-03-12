@@ -16,7 +16,7 @@ class SimplePrev(QtGui.QWidget):
 		self.setcount=QtGui.QPushButton('choose count')
 		self.rootifyButton=QtGui.QPushButton("rootify")
 		self.txtifyButton=QtGui.QPushButton("asciify") #include option to set averaging
-		self.numpyfButton=QtGui.QPushButton("numpyfyNOT")
+		self.numpyfyButton=QtGui.QPushButton("numpyfy")
 		self.previewButton=QtGui.QPushButton("preview")
 		self.fitButton=QtGui.QPushButton("fitDecay")
 		self.OrcaFileBrowseButton=QtGui.QPushButton("Browse")
@@ -35,6 +35,7 @@ class SimplePrev(QtGui.QWidget):
 		grid.addWidget(self.setcount, 5, 2)
 		grid.addWidget(self.rootifyButton, 1, 3)
 		grid.addWidget(self.txtifyButton, 1, 4)
+		grid.addWidget(self.numpyfyButton, 1, 5)
 		grid.addWidget(self.previewButton, 2, 3)
 		grid.addWidget(self.fitButton, 2, 4)
 		self.setLayout(grid)

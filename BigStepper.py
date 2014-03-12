@@ -25,6 +25,7 @@ class BigStepper():
 		self.ui.RootFileBrowseButton.clicked.connect(self.onRootFileBrowseButton)
 		self.ui.txtifyButton.clicked.connect(self.ontxtifyButton)
 		self.ui.rootifyButton.clicked.connect(self.onrootifyButton)
+		self.ui.numpyfyButton.clicked.connect(self.onnumpyfyButton)
 		self.ui.previewButton.clicked.connect(self.onpreviewButton)
 		self.ui.fitButton.clicked.connect(self.onfitButton)
 		self.ui.setchan.clicked.connect(self.updatechan)
@@ -37,6 +38,8 @@ class BigStepper():
 		self.ui.rootfilepathdisp.setText(self.model.sisdatatrans.rootfile)
 	def ontxtifyButton(self):
 		self.model.txtify()
+	def onnumpyfyButton(self):
+		self.model.numpyfy()
 
 	def onOrcaFileBrowseButton(self):
 		self.model.sisdatatrans.orcafile=self.ui.FileyCyrus(self.scoutmaster.OrcaFileFolder)

@@ -9,6 +9,7 @@ class scoutmaster():
 		self.OrcaFileFolder="/Volumes/HgLaser/Data/Orca"
 		self.ROOTFileFolder="/Volumes/HgLaser/Data/Rootified/"
 		self.TxtFileFolder="/Volumes/HgLaser/Data/Txtified/"
+		self.NpyFileFolder="/Volumes/HgLaser/Data/Numpyfied/"
 	def updateOrcaFolder(self, orcafolder):
 		self.OrcaFileFolder=orcafolder
 #		tick.updateOrcaFolder(orcafolder)

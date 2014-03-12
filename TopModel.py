@@ -16,6 +16,7 @@ class TopModel():
 		self.sisdatatrans.orcafilefolder=self.scoutmaster.OrcaFileFolder	
 		self.sisdatatrans.rootfilefolder=self.scoutmaster.ROOTFileFolder
 		self.sisdatatrans.txtfilefolder=self.scoutmaster.TxtFileFolder
+		self.sisdatatrans.npyfilefolder=self.scoutmaster.NpyFileFolder
 		self.sisdatatrans.orcafile=''
 		self.sisdatatrans.rootfile=''
 		self.sisdatatrans.channelnum=1#make this flexible
@@ -23,6 +24,8 @@ class TopModel():
 
 	def txtify(self):
 		self.sisdatatrans.txtify(10,1)
+	def numpyfy(self):
+		self.sisdatatrans.numpyfy()
 
 	def rootify(self):
 		self.sisdatatrans.rooter()
